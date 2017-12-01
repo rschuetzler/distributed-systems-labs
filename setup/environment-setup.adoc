@@ -1,0 +1,67 @@
+= Getting ready for Python
+Ryan Schuetzler <ryan@schuetzler.net>
+v0.1
+ifndef::bound[:imagesdir: figs]
+:icons: font
+
+This tutorial will walk you through everything you need to do to be ready to begin developing things in Python.
+Whether your goal is data analysis, web development, or simply https://automatetheboringstuff.com/[automating boring stuff], the tools you install here will help you get started.
+
+== Objectives
+
+- Install Python 3.6
+- Create a GitHub account
+- Install Pycharm
+
+=== Install Python
+____
+Python is the second best language for everything.
+____
+
+Python is an awesome programming language.
+It is object-oriented, has great libraries for data science, some of the best web frameworks around, and it is really easy to start with.
+The joke in the Python community is that it's the "second best language for everything." That makes it an amazing tool when you want to do more than one thing.
+This section will help you get Python installed on your computer.
+
+There are currently two major variations of Python: Python 2.7, and Python 3.6.
+If you are starting your journey with Python, or are unsure which version to use, you should be using the latest version of Python 3.
+As of the time I wrote this tutorial, the latest version of Python is version 3.6.3.
+
+. Go to https://tutorial.djangogirls.org/en/python_installation/
+. Follow the instructions for installing Python for your operating system. Make sure to select the latest version of Python 3 (currently 3.6.3) on the downloads page.
+
+=== Create a GitHub account
+
+If you are doing any project with code, it is a good idea to keep your files version controlled.
+Version control allows you to track changes you make to your files.
+If you mess something up, version control makes it easy to roll back to a previous, working version.
+
+Git is currently the most popular version control application, and GitHub is a service that provides the ability to store your code, including all of your version histories, in the cloud.
+In addition to the basics of git, GitHub has added a lot of great tools to make collaboration easier.
+It also makes it easier for students to share code with their professors, or to collaborate on group projects.
+
+For this tutorial, we'll just be getting set up with an account at GitHub and downloading their desktop application to make work easier.
+
+[start=3]
+. Go to https://github.com.
+. Create an account by entering a username, email address, and password.
++
+NOTE: You don't need to pay any money for our uses here. The only reason you need to pay money is if you want to have private repositories. For our uses the public repos will be just fine.
+
+. Go to https://desktop.github.com/ and download the GitHub Desktop application for your OS.
+. After installing GitHub Desktop, open the application and log in with your GitHub account.
+
+=== Install PyCharm
+
+Development of any kind gets a lot easier when you use the right tools.
+In the case of Python, there are dozens of great tools you can use.
+My preferred programming tool is Emacs, but it's certainly not for everyone.
+For this class, I recommend using PyCharm, the excellent Python Integrated Development Environment (IDE) from JetBrains.
+JetBrains offers PyCharm and all of their other development tools free of charge for students and faculty for academic use.
+
+[start=7]
+. Go to https://www.jetbrains.com/shop/eform/students and register for the academic account as a teacher.
+. Once registered, you should be able to go to https://account.jetbrains.com/licenses to download and install PyCharm.
+. When you run PyCharm for the first time, you will need to activate it by signing in with the JetBrains account you created.
+
+That's it! Now your computer is ready to start programming in Python.
