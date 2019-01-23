@@ -1,6 +1,6 @@
 = Getting ready for Python
 Ryan Schuetzler <ryan@schuetzler.net>
-v0.1
+v0.2, 2019-01-23
 ifndef::bound[:imagesdir: figs]
 :icons: font
 
@@ -13,24 +13,25 @@ Whether your goal is data analysis, web development, or simply https://automatet
 - Create a GitHub account
 - Install Pycharm
 
-=== Install Python
+== Install Python
 ____
 Python is the second best language for everything.
 ____
 
 Python is an awesome programming language.
 It is object-oriented, has great libraries for data science, some of the best web frameworks around, and it is really easy to start with.
-The joke in the Python community is that it's the "second best language for everything." That makes it an amazing tool when you want to do more than one thing.
+The joke in the Python community is that it's the "second best language for everything." 
+That makes it an amazing tool when you want to do more than one thing.
 This section will help you get Python installed on your computer.
 
-There are currently two major variations of Python: Python 2.7, and Python 3.6.
+There are currently two major variations of Python: Python 2.7, and Python 3.7.
 If you are starting your journey with Python, or are unsure which version to use, you should be using the latest version of Python 3.
-As of the time I wrote this tutorial, the latest version of Python is version 3.6.3.
+As of the time I wrote this tutorial, the latest version of Python is version 3.7.1.
 
 . Go to https://tutorial.djangogirls.org/en/python_installation/
 . Follow the instructions for installing Python for your operating system. Make sure to select the latest version of Python 3 (currently 3.6.3) on the downloads page.
 
-=== Create a GitHub account
+== Create a GitHub account
 
 If you are doing any project with code, it is a good idea to keep your files version controlled.
 Version control allows you to track changes you make to your files.
@@ -46,20 +47,40 @@ For this tutorial, we'll just be getting set up with an account at GitHub and do
 . Go to https://github.com.
 . Create an account by entering a username, email address, and password.
 +
-NOTE: You don't need to pay any money for our uses here. The only reason you need to pay money is if you want to have private repositories. For our uses the public repos will be just fine.
+NOTE: You don't need to pay any money for our uses here. The only reason you need to pay money is if you want to have a lot of collaborators on a private project. For our purposes, the free account will be plenty.
 
 . Go to https://desktop.github.com/ and download the GitHub Desktop application for your OS.
 . After installing GitHub Desktop, open the application and log in with your GitHub account.
 
-=== Install PyCharm
+== Install Visual Studio Code
+For any job, it's important to have the right tools, and to learn how to use them.
+One of the most valuable tools for a programmer is a good code editor. 
+While some programmers use fancy tools like PyCharm (see the next section) to do their programming, I find that it's helpful to stick with a plain text editor, at least at first.
+Working with just a text editor helps you understand exactly what's going on with your program while you're still learning.
+Once you've got the basics, you can move on to using bigger and more powerful tools.
 
-Development of any kind gets a lot easier when you use the right tools.
-In the case of Python, there are dozens of great tools you can use.
-My preferred programming tool is Emacs, but it's certainly not for everyone.
-For this class, I recommend using PyCharm, the excellent Python Integrated Development Environment (IDE) from JetBrains.
-JetBrains offers PyCharm and all of their other development tools free of charge for students and faculty for academic use.
+One of the best text editors for Python programming is Visual Studio Code, or VS Code for short.
+VS Code is a free, open source, cross-platform (meaning it's available for Mac, Linux, and Windows) programming text editor from Microsoft.
 
 [start=7]
+. Go to https://code.visualstudio.com/ and download the latest version of VS Code.
+. Run the installer to get VS Code on your machine.
+. Click the Extensions icon on the left.
++
+.VS Code Extensions icon
+image::code-extensions.png[]
+
+. Search for Python and install the official extension from Microsoft. Reload VS Code after installing the extension.
+
+TIP: There are thousands of helpful extensions for VS Code (some great, others not so great). Search for a programming language or tool to see what helpful extensions you can find.
+
+== Old: Install PyCharm (IDE)
+NOTE: This section describes how to get an academic license for PyCharm, and Python development tool. You don't need PyCharm, but it's a very helpful tool if you want to learn how to use it.
+
+For professional developers, a good Integrated Development Environment (IDE) can make programming a lot easier by doing things for you, understanding the code, and helping find errors before they're a problem.
+One of the best IDEs for Python programming is PyCharm from JetBrains.
+JetBrains offers PyCharm and all of their other development tools free of charge for students and faculty for academic use.
+
 . Go to https://www.jetbrains.com/shop/eform/students and register for the academic account as a teacher.
 . Once registered, you should be able to go to https://account.jetbrains.com/licenses to download and install PyCharm.
 . When you run PyCharm for the first time, you will need to activate it by signing in with the JetBrains account you created.
