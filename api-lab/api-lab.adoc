@@ -95,6 +95,48 @@ Advanced Zapier plans cost up to $75/month, suggesting that these integrations c
 . icon:keyboard-o[] What concerns might you have for employees of your company using Zapier or similar services?
 
 == Using Postman
+When you need to interact directly with APIs, whether creating or consuming them, it is helpful to have a tool to let you see what's going on with your requests.
+Postman (https://www.getpostman.com/) calls itself the world's only complete API Development Environment.
+I have no way to verify that statement, but I can say that it's a very useful tool for testing out requests to an API to (a) see what it returns and (b) make sure it returns what you want it to.
+In this part of the lab, you will use Postman to send some API requests and see how the data is formatted when it comes back.
+
+=== Setting up
+. Go to https://www.getpostman.com/downloads/ and download the version of Postman appropriate for your OS.
+. Install the application
+. Run Postman on your computer
+. You can either choose to create a free Postman account, or you can click the little gray link at the bottom of the window to skip signing up and go straight to the app.
+. In the window that appears, choose the option to create a Collection. I called my collection "API Basics."
++
+.Postman intro screen
+image::postman-intro.png[]
+
+=== Using a basic API
+Now that we have a project, we're going to look at what happens when we use an API.
+We'll start off with the simplest API call possible.
+It has no parameters, and no authentication.
+We'll use the API from https://shibe.online to get a random picture of a dog.
+
+[start=6]
+. Click the "..." next to your new collection and choose the option to "Add Request"
+.. Name the request "Random Dog" and save it to your collection.
+. Open the request and enter `https://shibe.online/api/shibes` where Postman asks for the request URL.
+. Make sure the request type is "GET" (check the dropdown to the left of the URL)
++
+NOTE: `GET`, `POST`, `PUT`, and `DELETE` are the most common request types used when accessing APIs. These are HTTP request methods, and you can find more information about when to use each here: https://www.w3schools.com/tags/ref_httpmethods.asp.
+
+. Click btn:[Send] to send the request.
+. In the box at the bottom, you should see the response from the API that includes a single URL. If you copy that URL into a web browser, you'll see that it's a picture of a dog, as promised.
+
+=== Adding parameters
+Some APIs use URL parameters to specify additional information when fulfilling requests.
+For example, our Shibe API allows us to specify how many dog pictures we would like (up to 100) using the `count` parameter.
+
+[start=11]
+. Under the request URL in the Params tab, put in `count` as the Key, and `5` as the value.
++
+NOTE: Notice that changing the parameters also changes the URL in the bar above. It adds `?count=5` after the URL that you previously put. That is how parameters are passed in HTTP GET requests. Postman makes it easier to set different parameters by presenting them in a table instead of in a long string.
+
+
 
 == Extras
 
