@@ -94,7 +94,7 @@ Advanced Zapier plans cost up to $75/month, suggesting that these integrations c
 . icon:keyboard-o[] What challenges did have creating the integration?
 . icon:keyboard-o[] What concerns might you have for employees of your company using Zapier or similar services?
 
-== Using Postman
+== Part 2: Using Postman
 When you need to interact directly with APIs, whether creating or consuming them, it is helpful to have a tool to let you see what's going on with your requests.
 Postman (https://www.getpostman.com/) calls itself the world's only complete API Development Environment.
 I have no way to verify that statement, but I can say that it's a very useful tool for testing out requests to an API to (a) see what it returns and (b) make sure it returns what you want it to.
@@ -135,6 +135,8 @@ For example, our Shibe API allows us to specify how many dog pictures we would l
 . Under the request URL in the Params tab, put in `count` as the Key, and `5` as the value.
 +
 NOTE: Notice that changing the parameters also changes the URL in the bar above. It adds `?count=5` after the URL that you previously put. That is how parameters are passed in HTTP GET requests. Postman makes it easier to set different parameters by presenting them in a table instead of in a long string.
+
+
 
 
 
