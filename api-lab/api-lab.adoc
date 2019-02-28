@@ -133,8 +133,10 @@ For example, our Shibe API allows us to specify how many dog pictures we would l
 
 [start=11]
 . Under the request URL in the Params tab, put in `count` as the Key, and `5` as the value.
+. Click btn:[Send] to see the result of this query. You should receive a list of 5 URLs, each with their own random dog picture.
+. Add a second parameter for `httpsUrls` with a value of `false`. Send and check the list and notice that the URLs returned are now `http` instead of `https`.
 +
-NOTE: Notice that changing the parameters also changes the URL in the bar above. It adds `?count=5` after the URL that you previously put. That is how parameters are passed in HTTP GET requests. Postman makes it easier to set different parameters by presenting them in a table instead of in a long string.
+NOTE: Notice that changing the parameters also changes the URL in the bar above. It adds `?count=5&httpsUrls=false` after the URL that you previously put. That is how parameters are passed in HTTP GET requests. Postman makes it easier to set different parameters by presenting them in a table instead of in a long string. You can copy the exact same URL into your browser and see the results there as well. Try it: `http://shibe.online/api/shibes?count=10&httpsUrls=false`.
 
 
 
