@@ -177,9 +177,10 @@ TIP: There are some great resources out there for learning how OAuth works. http
 Now that you have the basics of how to use an API with Postman, dig around on your own and learn something new.
 Look for new APIs at https://github.com/toddmotto/public-apis, https://www.programmableweb.com/, or other sources.
 
-. icon:desktop[] Create requests to interact with 3 different APIs besides those described here. Take and label screenshots for each. Describe what each API does.
+[start=23]
+. icon:desktop[] / icon:keyboard-o[] Create requests to interact with 3 different APIs besides those described here. Take and label screenshots for each. Describe what each API does.
 . icon:keyboard-o[] What have you learned about APIs from this lab?
-. icon:keyboard-o-[] What challenges did you face from this lab?
+. icon:keyboard-o[] What challenges did you face from this lab?
 
 
 == Extras
