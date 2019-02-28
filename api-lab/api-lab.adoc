@@ -153,12 +153,33 @@ The ShoutCloud API accepts a JSON-formatted input and gives back an ALL-CAPSifie
 . Don't add anything to the "Params" tab. Usually with HTTP POST requests, data is passed in the message body instead of as part of the URL.
 . Go to the Body tab, select `raw`.
 . For the orange input type, select `JSON (application/json)`.
-.. Check the Headers tab and note that a `Content-Type` header has been added.
+.. Check the Headers tab and note that a `Content-Type` header has been added. This header tells the API what type of data you are willing to accept. In this case, you are telling the server that you will only accept JSON in return.
 . In the input box, enter `{"INPUT": "put some text here"}`
 +
 .Entering parameters for a POST
 image::postman-post.png[]
 . Click btn:[Send]. You should get back a response with two values: "INPUT" and "OUTPUT". INPUT is the string you entered, and OUTPUT is the CAPS-ified version of the string.
+
+=== Authentication
+Authentication for APIs can take many different forms.
+Many APIs use a secret key that is passed either as a parameter or as part of the header.
+Others allow you to use a username and password directly.
+Still others use OAuth, an open standard for authentication.
+
+Learning how to authenticate with an API is beyond the scope of this lab because getting an API key usually involves creating an account somewhere, and I think one new account per lab is enough.
+If your experimentation takes you to an API that requires a key, you'll likely need to create an account to get the API key.
+If it requires OAuth, you'll have to do some work to figure out how to use it.
+
+TIP: There are some great resources out there for learning how OAuth works. https://stackoverflow.com/questions/4727226/on-a-high-level-how-does-oauth-2-work has a good real life comparison.
+
+
+=== Experimentation
+Now that you have the basics of how to use an API with Postman, dig around on your own and learn something new.
+Look for new APIs at https://github.com/toddmotto/public-apis, https://www.programmableweb.com/, or other sources.
+
+. icon:desktop[] Create requests to interact with 3 different APIs besides those described here. Take and label screenshots for each. Describe what each API does.
+. icon:keyboard-o[] What have you learned about APIs from this lab?
+. icon:keyboard-o-[] What challenges did you face from this lab?
 
 
 == Extras
