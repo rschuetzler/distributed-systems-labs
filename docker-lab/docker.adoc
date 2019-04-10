@@ -1,0 +1,114 @@
+= Containers and Docker
+Ryan Schuetzler <rschuetzler@unomaha.edu>
+v0.1, 2019-03-27
+ifndef::bound[:imagesdir: figs]
+:icons: font
+:source-highlighter: rouge
+:rouge-style: github
+:experimental:
+
+Containers are a technology that allows you to virtualize computing resources inside an environment even smaller than a virtual machine.
+Using containers, you can keep your development and production environments more similar, and you can more easily keep different developers working in the same computing environment.
+Docker is the most popular tool for creating, running, and managing containers. 
+In this lab, you will get some experience running Docker commands and seeing what an application looks like running in Docker.
+
+== Step 1: Docker for Beginners
+Play with Docker classroom is a website that allows you to run Docker commands and see their effects without running anything locally. 
+Because Docker's a bit picky in how it works (especially with Windows), this is the easiest way to see what it can do without dealing with local installation.
+With the Play with Docker classroom, you can run just about any command to see what it does.
+
+. Go to https://hub.docker.com/signup and create a Docker Hub account.
+. Go to https://training.play-with-docker.com/beginner-linux/ and complete the tutorial provided.  You'll need to sign in with your Docker Hub account. You'll enter commands in the screen on the right, while reading along with the tutorial on the left.
++
+TIP: Don't just type in the commands.  It's important to read through the descriptions to understand what the commands are doing.
+. icon:desktop[] Take at least two screenshots while you are working through this lab.  Include them in your submission document.
+. icon:keyboard-o[] Go to https://hub.docker.com/search?q=&type=image and scroll through the most popular Docker images.  Find one with a name you don't recognize, and find out what it does (Google is your friend).  Put the name of the image and a description in your response document.
+
+== Step 2: Application Containerization and Orchestration
+Besides creating simple containers to run a single command, Docker can also be used to coordinate several containers with different applications.
+This could be useful if, for example, you have a Django application that connects to a PostgreSQL database.
+More complex distributed services need more different applications, and it can be a headache to keep the applications updated and equal across different computers.
+This next tutorial covers using Docker Compose to orchestrate different services.
+
+[start=5]
+. Go to https://training.play-with-docker.com/microservice-orchestration/ and complete the tutorial provided.
+. icon:desktop[] Take at least 3 screenshots while you are working through this lab.  Include them in your submission document.
+. icon:keyboard-o[] In Step 6 of the microservices tutorial, what does the linkextractor application do?
+. icon:keyboard-o[] Explain the difference in functionality between a `Dockerfile` and a `docker-compose.yml` file.  What does each file do?
+
+== Step 3: Finding some answers
+The following files take a Django application stored in the `./api` folder, and a React frontend stored in the `./frontend` folder and containerizes them.
+Using Google, the Docker documentation, and/or the tutorials you just completed, explain what each of the following lines does:
+
+=== The Django Dockerfile
+[start=9]
+. icon:keyboard-o[] Line 1: What version of Python am I using?
+. icon:keyboard-o[] Line 8-10: If I'm running a Django application, what needs to be in my `requirements.txt` (hint: look at your first Django assignment)
+. icon:keyboard-o[] Line 13: What is the `EXPOSE` command doing?
+
+.api/Dockerfile
+[source,docker,linenums]
+----
+FROM python:3.7
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/api
+COPY requirements.txt /api/api/
+RUN pip install -r requirements.txt
+
+
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+----
+
+=== The Docker-compose file
+The following `docker-compose.yml` file orchestrates the Django backend, the React frontend, and a database service.
+
+[start=12]
+. icon:keyboard-o[] Line 4-7: What application is used for the `db` service?
+. icon:keyboard-o[] Line 6-7: What does the `ports` section do?
+. icon:keyboard-o[] Line 11-12: What does a docker `volume` do?
+. icon:keyboard-o[] Line 15-16: What does `depends_on` mean?
+
+.docker-compose.yml
+[source,yaml,linenums]
+----
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+  django:
+    build: ./api
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - ./api:/app/api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend:/app/frontend
+      - node-modules:/app/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node-modules:
+----
+
+== Step 4: Experimentation
+Now that you have run some basic commands in Docker and explored a bit how it works, find something new.
+It could be a new command, running a new container, or figuring out how to run Docker locally and testing it out.
+
+[start=16]
+. icon:keyboard-o[] What new thing about Docker did you find? 
