@@ -1,0 +1,60 @@
+= Creating your own blockchain
+Ryan Schuetzler <rschuetzler@unomaha.edu>
+v0.1, 2019-04-10
+ifndef::bound[:imagesdir: figs]
+:icons: font
+:source-highlighter: rouge
+:rouge-style: github
+:experimental:
+
+== Objectives
+* Create your own blockchain in Python
+* Create an interface to interact with your blockchain
+* Learn the concepts of proof of work, mining, transactions, and blocks
+
+== Background information
+
+. Watch all videos linked in the course module on Blockchains.
+. Play around with the Hash, Block, Blockchain, and Coinbase pages on https://anders.com/blockchain/hash.html
+. Prepare answers for these questions in your assignment document
+.. icon:keyboard-o[] What happens to the Nonce of a block if the data in the block is changed? 
+.. icon:keyboard-o[] How is the Nonce of a given block calculated?
+.. icon:keyboard-o[] If you wanted mining a block to take 5 minutes instead of 5 seconds, what would you change?
++
+TIP: Sometimes you will find a block where mining takes a long time, and other times it will happen almost instantly.  This happens because by random chance the Nonce required to create the proof of work (four zeroes at the start of the hash) is sometimes very small, and other times very large. 
+
+. You'll be using Postman to mine and send transactions to your blockchain. Ensure you have Postman installed (you should have installed it for the API lab). If you don't have it, go to https://www.getpostman.com/ to download and install.
+. You will also record a screencast with your blockchain and code explaining how it works.  You can record with https://www.unomaha.edu/information-technology-services/instructional-technology/zoom.php[Zoom] and upload to Youtube, or you can use the UNO Academic Video link in the Canvas course. Your recording will include your screen and voice.
+
+== Building your own Blockchain
+[start=6]
+. Create a new Github repository for your code using the Github assignment link on Canvas.
+. Clone the Github repository to your computer.
++
+NOTE: The repository includes a `blockchain.py` and `requirements.txt` file to get you started
+. Create a new Python 3.6+ virtual environment inside your blockchain folder.  If you need a refresher how to create and activate a Python virtual environment, refer to the https://tutorial.djangogirls.org/en/django_installation/[Django Girls tutorial], but don't install Django.
+. Activate your virtual environment.
+. Install Flask (a lightweight Python web framework) and requests in the activated virtual environment with the following command:
++
+....
+pip install -r requirements.txt
+....
+. Go to https://hackernoon.com/learn-blockchains-by-building-one-117428612f46 and complete Steps 1-3 of the tutorial there.  Make sure you read the explanations of what is happening in the code, because you will be required to explain it. You can skip Step 4: Consensus.
+. Once you have completed the blockchain, mine some blocks, send some transactions, mine the transactions, and view the chain in Postman.
+
+== Deliverables
+. Create a short video (~5 minutes) explaining what your code does, and how to interact with it. Include all of the following:
+.. Check the chain several times after mining and adding new transactions using the `/chain` endpoint.
+.. Mine for new blocks and show the results with the `/chain` command
+.. Add new transactions, mine them, and show the results with the `/chain` command.
+.. Explain what is happening to your blockchain. Warning, your blockchain is not being stored on disk. If you restart your Flask application, you will have a brand new, clean blockchain.
+. Include 2 screenshots of your blockchain in action with Postman.
+. Create a document containing the following:
+.. A link to your video, either on YouTube, UNO Academic video, or uploaded to the Box folder listed in Canvas
+.. Answers to the following questions:
+... What happens to the Nonce of a block if the data in the block is changed? 
+... How is the Nonce of a given block calculated?
+... If you wanted mining a block to take 5 minutes instead of 5 seconds, what would you change?
+... Do a little research and find an article demonstrating a creative use of blockchain technology that does NOT involve currency. Summarize it in just a few sentences and be sure to cite the source.
+... Bitcoin and Ethereum are not the only cryptocurrencies. Do a little research and find one and describe its history and the audience for the currency and why it was created (cite your sources).
+. *[Extra credit, up to 5 points]* Complete the Consensus step of the tutorial. Include a description of how consensus works in your video.
